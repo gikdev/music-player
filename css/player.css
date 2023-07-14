@@ -1,3 +1,4 @@
+@import url('./slider.css');
 .player {
   background: hsla(0, 0%, 100%, 0.05);
   border-radius: 1rem;
@@ -40,4 +41,10 @@
   border-radius: 0.5rem;
   width: 5rem;
   height: 5rem;
+}
+.player__slider-container {
+  direction: ltr;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
