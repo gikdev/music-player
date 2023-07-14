@@ -6,6 +6,7 @@ class Player {
     this.btnPervious = player.querySelector('#previous')
     this.btnPlay = player.querySelector('#play')
     this.btnNext = player.querySelector('#next')
+    this.volumeSlider = player.querySelector('#volume-slider')
 
     this.isPlaying = false
     this.musicIndex = 0
@@ -87,11 +88,15 @@ class Player {
     this.btnPlay.addEventListener('click', this.plause)
     this.btnNext.addEventListener('click', this.next)
     this.btnPervious.addEventListener('click', this.pervious)
+    this.volumeSlider.addEventListener('input', this.setVolume)
   }
   fixUI = () => {
     this.btnPlay.innerHTML = this.svgs.play
     this.btnNext.innerHTML = this.svgs.next
     this.btnPervious.innerHTML = this.svgs.pervious
+  }
+  setVolume = () => {
+    this.audio.volume = this.volumeSlider.value / 100
   }
 }
 
