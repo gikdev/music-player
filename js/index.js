@@ -51,8 +51,8 @@ class Player {
   loadMusic = (id) => {
     this.musicName.textContent = this.musics[id].name
     this.musicSinger.textContent = this.musics[id].singer
-    this.musicImage.src = `/assets/image/${this.musics[id].imageFile}`
-    this.audio.src = `/assets/sound/${this.musics[id].soundFile}`
+    this.musicImage.src = `./assets/image/${this.musics[id].imageFile}`
+    this.audio.src = `./assets/sound/${this.musics[id].soundFile}`
     this.audio.load()
   }
   plause = () => {
