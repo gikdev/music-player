@@ -1,0 +1,43 @@
+.player {
+  background: hsla(0, 0%, 100%, 0.05);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-family: Vazirmatn, Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  gap: 3rem;
+  padding: 2rem;
+  width: 30rem;
+}
+.player__details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+}
+.player #music-image {
+  width: 100%;
+}
+.player #music-name {
+  font-size: x-large;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.player #music-singer {
+  margin: 0;
+  text-align: center;
+}
+.player__controls {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.player__controls button {
+  background: hsla(0, 0%, 100%, 0.05);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  width: 5rem;
+  height: 5rem;
+}
