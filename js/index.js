@@ -7,6 +7,7 @@ class Player {
     this.btnPlay = player.querySelector('#play')
     this.btnNext = player.querySelector('#next')
     this.volumeSlider = player.querySelector('#volume-slider')
+    this.timeSlider = player.querySelector('#time-slider')
 
     this.isPlaying = false
     this.musicIndex = 0
@@ -81,6 +82,7 @@ class Player {
     this.btnPlay.innerHTML = this.svgs.play
     if (!this.audio.paused) this.audio.pause()
     this.isPlaying = false
+    this.timeSlider.value = 0
   }
   setEL = () => {
     this.fixUI()
@@ -89,6 +91,7 @@ class Player {
     this.btnNext.addEventListener('click', this.next)
     this.btnPervious.addEventListener('click', this.pervious)
     this.volumeSlider.addEventListener('input', this.setVolume)
+    this.timeSlider.addEventListener('input', this.setTime)
   }
   fixUI = () => {
     this.btnPlay.innerHTML = this.svgs.play
@@ -97,6 +100,10 @@ class Player {
   }
   setVolume = () => {
     this.audio.volume = this.volumeSlider.value / 100
+  }
+  setTime = () => {
+    let timeToSeekTo = (this.audio.duration * (this.timeSlider.value / 100))
+    this.audio.currentTime = timeToSeekTo
   }
 }
 
