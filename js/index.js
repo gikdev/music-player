@@ -16,25 +16,25 @@ class Player {
         "name": "مست نجف",
         "singer": "علی اکبر حائری",
         "soundFile": "mast_najaf.mp3",
-        "imageFile": "mast_najaf.webp"
+        "imageFile": "mast_najaf.jpg"
       },
       {
         "name": "نماهنگ سرود جانم علی",
         "singer": "گروه سرود نجم الثاقب",
         "soundFile": "janam_ali.mp3",
-        "imageFile": "janam_ali.webp"
+        "imageFile": "janam_ali.jpg"
       },
       {
         "name": "نماهنگ بیعت با علی",
         "singer": "ابوذر روحی",
         "soundFile": "beyat_ba_ali.mp3",
-        "imageFile": "beyat_ba_ali.webp"
+        "imageFile": "beyat_ba_ali.jpg"
       },
       {
         "name": "نماهنگ خلیفة الله",
         "singer": "حسن کاتب کربلایی",
         "soundFile": "khalifa_allah.mp3",
-        "imageFile": "khalifa_allah.webp"
+        "imageFile": "khalifa_allah.jpg"
       }
     ]
     this.svgs = {
