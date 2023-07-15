@@ -4,11 +4,16 @@
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  font-family: Vazirmatn, Arial, Helvetica, sans-serif;
+  font-family: Vazir, Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   gap: 3rem;
   padding: 0 0 3rem 0;
   width: 50rem;
+}
+.player__rest-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 .player__details {
   display: flex;
@@ -33,7 +38,7 @@
 .player__controls {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0 3rem;
 }
 .player__controls button {
@@ -48,6 +53,7 @@
   direction: ltr;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
   padding: 0 3rem 0 3rem;
 }
