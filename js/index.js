@@ -100,6 +100,7 @@ class Player {
   }
   setVolume = () => {
     this.audio.volume = this.volumeSlider.value / 100
+    this.volumeSlider.style.background = `linear-gradient(to right, hsl(200, 100%, 50%) ${this.volumeSlider.value}%, hsla(0, 0%, 0%, 0.5) 0%)`
   }
   setTime = () => {
     let timeToSeekTo = (this.audio.duration * (this.timeSlider.value / 100))

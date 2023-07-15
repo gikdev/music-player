@@ -3,7 +3,7 @@ input[type=range] {
      -moz-appearance: none;
           appearance: none;
   height: 5px;
-  background: hsla(0, 100%, 0%, 0.3);
+  background: linear-gradient(to right, hsl(200, 100%, 50%) 80%, hsla(0, 0%, 0%, 0.5) 0%);
   border-radius: 53px;
   cursor: pointer;
 }
