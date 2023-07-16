@@ -15,28 +15,28 @@ class Player {
     this.currentTimeTracker;
     this.musics = [
       {
-        "name": "مست نجف",
-        "singer": "علی اکبر حائری",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16886604346303551066363.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/GCpYEPw21Qtxy_CrruMwwTUwN2dDPHPMdCaCJ2ehyfs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4ODY2MDM1OTIzOTY2NjMyNDQ3MjcuanBn.jpg"
+        "name": "نماهنگ مرهم",
+        "singer": "پیام کیانی",
+        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16862418013250862413684.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/eLVd0ivEmLniULUT53A49lHDdMp7hwXEHNaH37Lwpmo/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NjI0MTcxMDQxMjA2ODkwMzM4NTAuanBn.jpg"
       },
       {
-        "name": "نماهنگ سرود جانم علی",
-        "singer": "گروه سرود نجم الثاقب",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16883148568412932893789.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/8kk91Xbys7V1Qvtaq0qo8WPPDBb72vIMQae5HM6Aew4/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4ODMxNDg5MzAwOTc2Njc0MTQ4MzIuanBn.jpg"
+        "name": "نماهنگ بغل وا کن",
+        "singer": "حسین خلجی",
+        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16868682688575724581181.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/4KMgVhHQKL5Je5HTEo5gmpT-lnYKOnWM3B6gfJhghhM/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4Njg2ODM4OTEzMTk2NjAxMjMyOTQuanBn.jpg"
       },
       {
-        "name": "نماهنگ بیعت با علی",
-        "singer": "ابوذر روحی",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16883183490391081798728.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/M3GGTOAQvjtrWavvqZqpvUxt1ni_rwMK0mOy5nNZeDw/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4ODMxODY1Njg2NjcwMjc0MzM4OTQuanBn.jpg"
+        "name": "نماهنگ سحر کربلا",
+        "singer": "سید رضا نریمانی",
+        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16874500265213467745966.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/1UKT1kYN6qyjUkUEEUIaAGOTu-TVJJt5Tm8cNDn8T6Q/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NzQ0OTk0NDg2OTQyMjM0MzU0MTguanBn.jpg"
       },
       {
-        "name": "نماهنگ خلیفة الله",
-        "singer": "حسن کاتب کربلایی",
-        "soundFile": "https://mir1.kashoob.com/audio/202207/enc_16581591953983524323193.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/pFgSp5DpefLp8QIPw6p51yqmGlZcgUypQbLvO6oOCeE/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODE1OTIyMTUzNDk3MDgyMzExNTkuanBn.jpg"
+        "name": "نماهنگ علمداره آقا سپهداره",
+        "singer": "حسن عطایی",
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16892434062745120088309.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/m_uqba7iXbg2gIBlriuZkEoIIofd0rQgcTRHiiLk1xs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTI0Mjg5NjE5MTY1MDUyOTE0NzUuanBn.jpg"
       }
     ]
     this.svgs = {
