@@ -79,10 +79,10 @@ class Player {
     this.plause()
   }
   reset = () => {
+    this.setTime(0)
     this.btnPlay.innerHTML = this.svgs.play
     if (!this.audio.paused) this.audio.pause()
     this.isPlaying = false
-    this.setTime(0)
   }
   setEL = () => {
     this.audio.addEventListener('ended', this.next)
@@ -100,8 +100,8 @@ class Player {
   }
 
   setVolume = () => {
-    this.setCurrentVolume(this.volumeSlider.value)
     this.setVolumeUI(this.volumeSlider.value)
+    this.setCurrentVolume(this.volumeSlider.value)
   }
   setCurrentVolume = (percentage) => {
     this.audio.volume = percentage / 100
@@ -111,8 +111,8 @@ class Player {
     this.setSliderStyle(percentage, this.volumeSlider)
   }
   setTime = () => {
-    this.setCurrentTime(this.timeSlider.value)
     this.setTimeUI(this.timeSlider.value)
+    this.setCurrentTime(this.timeSlider.value)
   }
   setCurrentTime = (percentage) => {
     this.audio.currentTime = (this.audio.duration * (percentage / 100))
