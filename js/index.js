@@ -17,26 +17,26 @@ class Player {
       {
         "name": "مست نجف",
         "singer": "علی اکبر حائری",
-        "soundFile": "mast_najaf.mp3",
-        "imageFile": "mast_najaf.jpg"
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16886604346303551066363.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/GCpYEPw21Qtxy_CrruMwwTUwN2dDPHPMdCaCJ2ehyfs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4ODY2MDM1OTIzOTY2NjMyNDQ3MjcuanBn.jpg"
       },
       {
         "name": "نماهنگ سرود جانم علی",
         "singer": "گروه سرود نجم الثاقب",
-        "soundFile": "janam_ali.mp3",
-        "imageFile": "janam_ali.jpg"
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16883148568412932893789.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/8kk91Xbys7V1Qvtaq0qo8WPPDBb72vIMQae5HM6Aew4/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4ODMxNDg5MzAwOTc2Njc0MTQ4MzIuanBn.jpg"
       },
       {
         "name": "نماهنگ بیعت با علی",
         "singer": "ابوذر روحی",
-        "soundFile": "beyat_ba_ali.mp3",
-        "imageFile": "beyat_ba_ali.jpg"
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16883183490391081798728.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/M3GGTOAQvjtrWavvqZqpvUxt1ni_rwMK0mOy5nNZeDw/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4ODMxODY1Njg2NjcwMjc0MzM4OTQuanBn.jpg"
       },
       {
         "name": "نماهنگ خلیفة الله",
         "singer": "حسن کاتب کربلایی",
-        "soundFile": "khalifa_allah.mp3",
-        "imageFile": "khalifa_allah.jpg"
+        "soundFile": "https://mir1.kashoob.com/audio/202207/enc_16581591953983524323193.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/pFgSp5DpefLp8QIPw6p51yqmGlZcgUypQbLvO6oOCeE/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODE1OTIyMTUzNDk3MDgyMzExNTkuanBn.jpg"
       }
     ]
     this.svgs = {
@@ -51,8 +51,8 @@ class Player {
   loadMusic = (id) => {
     this.musicName.textContent = this.musics[id].name
     this.musicSinger.textContent = this.musics[id].singer
-    this.musicImage.src = `./assets/image/${this.musics[id].imageFile}`
-    this.audio.src = `./assets/sound/${this.musics[id].soundFile}`
+    this.musicImage.src = this.musics[id].imageFile
+    this.audio.src = this.musics[id].soundFile
     this.audio.load()
   }
   plause = () => {
@@ -82,8 +82,7 @@ class Player {
     this.btnPlay.innerHTML = this.svgs.play
     if (!this.audio.paused) this.audio.pause()
     this.isPlaying = false
-    this.timeSlider.value = 0
-    this.setSliderStyle(0, this.timeSlider)
+    this.setTime(0)
   }
   setEL = () => {
     this.audio.addEventListener('ended', this.next)
