@@ -1,8 +1,8 @@
 /* * { outline: 2px dashed crimson } */
 * { box-sizing: border-box }
 html, body {
-  background-color: #202020;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   height: 100%;
 }
 html {
@@ -10,7 +10,6 @@ html {
 }
 body {
   align-items: center;
-  direction: rtl;
   display: flex;
   justify-content: center;
 }

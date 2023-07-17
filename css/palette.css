@@ -1,0 +1,15 @@
+:root {
+  --bg-primary: #222;
+  --bg-secondary: #081f37;
+  --bg-trans-primary: #ffffff10;
+  --text-primary: white;
+  --text-secondary: #c9c9c9;
+  --color-primary: #5fc9f3;
+  --color-secondary: #2e79ba;
+  --color-thirdary: #1e549f;
+  --gradient-color-primary-secondary: linear-gradient(
+      to left,
+      var(--color-primary),
+      var(--color-secondary)
+  )
+}
