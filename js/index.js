@@ -12,7 +12,6 @@ class Player {
     this.audio = document.createElement('audio')
     this.isPlaying = false
     this.musicIndex = 0
-    this.currentTimeTracker;
     this.musics = [
       {
         "name": "نماهنگ مرهم",
@@ -46,7 +45,7 @@ class Player {
   }
   init = () => {
     this.loadMusic(this.musicIndex)
-    this.setEL()
+    this.setListeners()
   }
   loadMusic = (id) => {
     this.musicName.textContent = this.musics[id].name
@@ -66,32 +65,32 @@ class Player {
     }
     this.isPlaying = !this.isPlaying
   }
-  next = () => {
-    this.reset()
+  nextMusic = () => {
+    this.resetState()
     this.musicIndex = (this.musicIndex >= this.musics.length - 1) ? (0) : (this.musicIndex + 1);
     this.loadMusic(this.musicIndex)
     this.plause()
   }
-  pervious = () => {
-    this.reset()
+  perviousMusic = () => {
+    this.resetState()
     this.musicIndex = (this.musicIndex <= 0) ? (this.musics.length - 1) : (this.musicIndex - 1);
     this.loadMusic(this.musicIndex)
     this.plause()
   }
-  reset = () => {
+  resetState = () => {
     this.setTime(0)
     this.btnPlay.innerHTML = this.svgs.play
     if (!this.audio.paused) this.audio.pause()
     this.isPlaying = false
   }
-  setEL = () => {
-    this.audio.addEventListener('ended', this.next)
+  setListeners = () => {
+    this.audio.addEventListener('ended', this.nextMusic)
     this.btnPlay.addEventListener('click', this.plause)
-    this.btnNext.addEventListener('click', this.next)
-    this.btnPervious.addEventListener('click', this.pervious)
+    this.btnNext.addEventListener('click', this.nextMusic)
+    this.btnPervious.addEventListener('click', this.perviousMusic)
     this.volumeSlider.addEventListener('input', this.setVolume)
     this.timeSlider.addEventListener('input', this.setTime)
-    this.currentTimeTracker = setInterval(() => {
+    setInterval(() => {
       if (!this.audio.paused) this.setTimeUI(this.calcCurrentPercentage())
     }, 1000)
   }
