@@ -1,9 +1,10 @@
-/* * { outline: 2px dashed crimson } */
+/* * { outline: 1px dashed crimson } */
 * { box-sizing: border-box }
 html, body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   height: 100%;
+  font-family: Vazir, sans-serif;
 }
 html {
   font-size: 62.5%;

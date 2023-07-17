@@ -1,4 +1,4 @@
-input[type=range] {
+.range {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -7,13 +7,7 @@ input[type=range] {
   cursor: pointer;
   height: 5px;
 }
-#time-slider {
-  background: linear-gradient(to right, hsl(200, 100%, 50%) 0%, hsla(0, 0%, 0%, 0.5) 0%);
-}
-#volume-slider {
-  background: linear-gradient(to right, hsl(200, 100%, 50%) 80%, hsla(0, 0%, 0%, 0.5) 0%);
-}
-input[type=range]::-webkit-slider-thumb {
+.range::-webkit-slider-thumb {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -23,9 +17,9 @@ input[type=range]::-webkit-slider-thumb {
   height: 2rem;
   width: 2rem;
 }
-#time-slider {
-  width: 100%;
+.range--time, #time-slider {
+  background: linear-gradient(to right, hsl(200, 100%, 50%) 0%, hsla(0, 0%, 0%, 0.5) 0%);
 }
-#volume-slider {
-  width: 30%;
+.range--volume, #volume-slider {
+  background: linear-gradient(to right, hsl(200, 100%, 50%) 80%, hsla(0, 0%, 0%, 0.5) 0%);
 }
