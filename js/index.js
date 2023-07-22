@@ -13,6 +13,7 @@ class Player {
     this.dlBtn = player.querySelector('#dl-btn')
     this.repeatBtn = player.querySelector('#repeat-btn')
     this.soundBtn = player.querySelector('#sound-btn')
+    this.nowPlaying = player.querySelector('#now-playing')
 
     this.repeatBtnMode = "repeat-all"
     // All modes: "repeat-all", "repeat-once", "shuffle"
@@ -67,6 +68,7 @@ class Player {
     this.audio.load()
 
     this.dlBtn.setAttribute('href', this.musics[id].soundFile)
+    this.nowPlaying.innerText = `در حال پخش ${this.musicIndex + 1} از ${this.musics.length}`
   }
   plause = () => {
     if (this.isPlaying)  {
@@ -154,8 +156,8 @@ class Player {
   onMusicEnd = () => {
     this.resetState()
     this.decideNextAudio()
-    this.loadMusic(this.nextMusicToPlay)
     this.musicIndex = this.nextMusicToPlay
+    this.loadMusic(this.nextMusicToPlay)
     this.plause()
   }
   onSoundBtnClick = () => {

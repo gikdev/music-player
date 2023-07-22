@@ -22,6 +22,11 @@
 .player__container--image-info {
   gap: 2rem;
 }
+#now-playing {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
 /* .player__container--image {} */
 .player__image {
   --size: 30rem;
@@ -95,10 +100,6 @@
 .player__option {
   cursor: pointer;
 }
-.player__option--repeat {}
-.player__option--dl {}
-.player__option--sound {}
-
 .range--volume {
   width: 100%;
   display: none;
