@@ -8,6 +8,8 @@ class Player {
     this.btnNext = player.querySelector('#next')
     this.volumeSlider = player.querySelector('#volume-slider')
     this.timeSlider = player.querySelector('#time-slider')
+    this.timeNow = player.querySelector('#time-now');
+    this.timeAll = player.querySelector('#time-all');
 
     this.audio = document.createElement('audio')
     this.isPlaying = false
@@ -93,11 +95,20 @@ class Player {
     setInterval(() => {
       if (!this.audio.paused) this.setTimeUI(this.calcCurrentPercentage())
     }, 1000)
+    this.audio.addEventListener('loadeddata', () => {
+      this.timeAll.innerText = this.secondsToTime(this.audio.duration)
+    })
   }
   setSliderStyle = (value, elem) => {
     elem.style.background = `linear-gradient(to right, hsl(200, 100%, 50%) ${value}%, hsla(0, 0%, 0%, 0.5) 0%)`
   }
-
+  secondsToTime = seconds => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = Math.floor(seconds % 60)
+    const minutesWithZero = minutes > 9 ? minutes : `0${minutes}`
+    const remainingSecondsWithZero = remainingSeconds > 9 ? remainingSeconds : `0${remainingSeconds}`
+    return `${minutesWithZero}:${remainingSecondsWithZero}`
+  }
   setVolume = () => {
     this.setVolumeUI(this.volumeSlider.value)
     this.setCurrentVolume(this.volumeSlider.value)
@@ -106,7 +117,6 @@ class Player {
     this.audio.volume = percentage / 100
   }
   setVolumeUI = (percentage) => {
-    this.volumeSlider.setAttribute('value', percentage)
     this.setSliderStyle(percentage, this.volumeSlider)
   }
   setTime = () => {
@@ -117,7 +127,7 @@ class Player {
     this.audio.currentTime = (this.audio.duration * (percentage / 100))
   }
   setTimeUI = (percentage) => {
-    this.timeSlider.setAttribute('value', percentage)
+    this.timeNow.innerText = this.secondsToTime(this.audio.currentTime)
     this.timeSlider.value = percentage
     this.setSliderStyle(percentage, this.timeSlider)
   }
