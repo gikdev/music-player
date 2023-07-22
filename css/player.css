@@ -83,10 +83,18 @@
 
 .player__container--options {
   flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   gap: 1rem;
 }
-/* .player__icon {} */
-/* .player__icon--sound {} */
+.player__option {
+  cursor: pointer;
+}
+.player__option--repeat {}
+.player__option--dl {}
+.player__option--sound {}
+
 .range--volume {
-  width: 30%;
+  width: 100%;
+  display: none;
 }
