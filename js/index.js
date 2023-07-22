@@ -32,10 +32,10 @@ class Player {
         "imageFile": "https://cdnimg.kashoob.com/1UKT1kYN6qyjUkUEEUIaAGOTu-TVJJt5Tm8cNDn8T6Q/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NzQ0OTk0NDg2OTQyMjM0MzU0MTguanBn.jpg"
       },
       {
-        "name": "نماهنگ علمداره آقا سپهداره",
-        "singer": "حسن عطایی",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16892434062745120088309.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/m_uqba7iXbg2gIBlriuZkEoIIofd0rQgcTRHiiLk1xs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTI0Mjg5NjE5MTY1MDUyOTE0NzUuanBn.jpg"
+        "name": "نماهنگ به خونه برگردیم",
+        "singer": "سید رضا نریمانی",
+        "soundFile": "https://mir1.kashoob.com/audio/202207/enc_16588838931580620064171.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/yeqbp1lZ7Kax_SDUWDPmABsQJBHnQxVtJHeX-ALQ0MA/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODg4MzkzMTkzMzg0MzYzODEyMzkuanBn.jpg"
       }
     ]
     this.svgs = {
