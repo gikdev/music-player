@@ -82,10 +82,15 @@
 }
 
 .player__container--options {
+  flex-direction: column;
+  gap: 3rem;
+}
+.player__options-container {
+  width: 100%;
   flex-direction: row;
+  display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 .player__option {
   cursor: pointer;

@@ -12,10 +12,12 @@ class Player {
     this.timeAll = player.querySelector('#time-all')
     this.dlBtn = player.querySelector('#dl-btn')
     this.repeatBtn = player.querySelector('#repeat-btn')
+    this.soundBtn = player.querySelector('#sound-btn')
 
     this.repeatBtnMode = "repeat-all"
     // All modes: "repeat-all", "repeat-once", "shuffle"
     this.audio = document.createElement('audio')
+    this.volumeSliderIsVisible = false
     this.isPlaying = false
     this.musicIndex = 0
     this.nextMusicToPlay = 1
@@ -103,6 +105,7 @@ class Player {
     this.volumeSlider.addEventListener('input', this.setVolume)
     this.timeSlider.addEventListener('input', this.setTime)
     this.repeatBtn.addEventListener('click', this.onRepeatBtnClick)
+    this.soundBtn.addEventListener('click', this.onSoundBtnClick)
     setInterval(() => {
       if (!this.audio.paused) this.setTimeUI(this.calcCurrentPercentage())
     }, 1000)
@@ -154,6 +157,11 @@ class Player {
     this.loadMusic(this.nextMusicToPlay)
     this.musicIndex = this.nextMusicToPlay
     this.plause()
+  }
+  onSoundBtnClick = () => {
+    if (this.volumeSliderIsVisible) this.volumeSlider.style.display = 'block'
+    if (!this.volumeSliderIsVisible) this.volumeSlider.style.display = 'none'
+    this.volumeSliderIsVisible = !this.volumeSliderIsVisible
   }
   setVolume = () => {
     this.setVolumeUI(this.volumeSlider.value)
