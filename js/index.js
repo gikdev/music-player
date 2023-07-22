@@ -8,8 +8,9 @@ class Player {
     this.btnNext = player.querySelector('#next')
     this.volumeSlider = player.querySelector('#volume-slider')
     this.timeSlider = player.querySelector('#time-slider')
-    this.timeNow = player.querySelector('#time-now');
-    this.timeAll = player.querySelector('#time-all');
+    this.timeNow = player.querySelector('#time-now')
+    this.timeAll = player.querySelector('#time-all')
+    this.dlBtn = player.querySelector('#dl-btn')
 
     this.audio = document.createElement('audio')
     this.isPlaying = false
@@ -55,6 +56,8 @@ class Player {
     this.musicImage.src = this.musics[id].imageFile
     this.audio.src = this.musics[id].soundFile
     this.audio.load()
+
+    this.dlBtn.setAttribute('href', this.musics[id].soundFile)
   }
   plause = () => {
     if (this.isPlaying)  {
