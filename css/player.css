@@ -78,6 +78,7 @@
   border: none;
   color: white;
   border-radius: 853rem;
+  cursor: pointer;
 }
 .btn--pervious, .btn--next {
   background: transparent;
