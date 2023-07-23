@@ -103,5 +103,5 @@
 }
 .range--volume {
   width: 100%;
-  display: none;
+  visibility: hidden;
 }

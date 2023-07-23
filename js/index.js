@@ -161,8 +161,8 @@ class Player {
     this.plause()
   }
   onSoundBtnClick = () => {
-    if (this.volumeSliderIsVisible) this.volumeSlider.style.display = 'block'
-    if (!this.volumeSliderIsVisible) this.volumeSlider.style.display = 'none'
+    if (this.volumeSliderIsVisible) this.volumeSlider.style.visibility = 'visible'
+    if (!this.volumeSliderIsVisible) this.volumeSlider.style.visibility = 'hidden'
     this.volumeSliderIsVisible = !this.volumeSliderIsVisible
   }
   setVolume = () => {
