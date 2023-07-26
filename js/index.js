@@ -46,6 +46,30 @@ class Player {
         "singer": "سید رضا نریمانی",
         "soundFile": "https://mir1.kashoob.com/audio/202207/enc_16588838931580620064171.mp3",
         "imageFile": "https://cdnimg.kashoob.com/yeqbp1lZ7Kax_SDUWDPmABsQJBHnQxVtJHeX-ALQ0MA/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODg4MzkzMTkzMzg0MzYzODEyMzkuanBn.jpg"
+      },
+      {
+        "name": "بسم الله اگه عاشق حضرت یاری",
+        "singer": "سید مجید بنی فاطمه",
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898104408144043366366.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/8VkcdJV2hM60xXBYDPkYBYdGX-pgVT8cqsMaVAk0uUs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTgxNzkzNTk1MDEyNzQxMTExMTUuanBn.jpg"
+      },
+      {
+        "name": "نماهنگ دم بگیرید",
+        "singer": "حنیف طاهری",
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898630542233373502651.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/hU1FibYmEiPPVswPCL9rU1vGsO43TmTKAyCCAQtmRz0/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2NjIxMjM3OTI4MDMyODk5MDAuanBn.jpg"
+      },
+      {
+        "name": "نماهنگ عجلوا بالحسین",
+        "singer": "سید رضا نریمانی",
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898618223007067036508.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/oOhSf0KJbee9i-CvMt-sUmVXiTyHmS-yuEa6XRgF_i4/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2Njc0MTMxOTc3OTg1NTg4NjkuanBn.jpg"
+      },
+      {
+        "name": "نماهنگ بی تو",
+        "singer": "حاج محمود کریمی",
+        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16899038432533550038761.mp3",
+        "imageFile": "https://cdnimg.kashoob.com/3-AfZfvGkVNDYWumHplV2XjLLB-IP1jb6dTTG_AlJUw/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTkwNDMwNzgyMjMwMjQ5NTUzNjQuanBn.jpg"
       }
     ]
     this.svgs = {
