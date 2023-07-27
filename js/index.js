@@ -14,6 +14,7 @@ class Player {
     this.repeatBtn = player.querySelector('#repeat-btn')
     this.soundBtn = player.querySelector('#sound-btn')
     this.nowPlaying = player.querySelector('#now-playing')
+    this.followingText = player.querySelector('.following-text')
 
     this.repeatBtnMode = "repeat-all"
     // All modes: "repeat-all", "repeat-once", "shuffle"
@@ -27,49 +28,189 @@ class Player {
         "name": "نماهنگ مرهم",
         "singer": "پیام کیانی",
         "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16862418013250862413684.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/eLVd0ivEmLniULUT53A49lHDdMp7hwXEHNaH37Lwpmo/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NjI0MTcxMDQxMjA2ODkwMzM4NTAuanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/eLVd0ivEmLniULUT53A49lHDdMp7hwXEHNaH37Lwpmo/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NjI0MTcxMDQxMjA2ODkwMzM4NTAuanBn.jpg",
+        "times": [
+          0.0, 11.3, 19.8, 
+          27.8, 35.4, 42.7,
+          54.0, 57.4, 61.2,
+          64.7, 68.4, 97.7,
+          100.8, 104.7, 109.1, 
+          112.9, 116.5, 121.1,
+          124.9, 128.4, 135.9, 
+          148.1, 151.5, 155.2,
+          158.8, 163.7,
+        ],
+        "texts": [
+          "دوای هر دردی دنیامو زیر و رو کردی",
+          "گرفتی دستامو آقا تو واقعا مردی",
+          "تو واقعا خوبی تو قلب من تو محبوبی",
+          "دل سیاهم شد با عشق تو طلاکوبی",
+          "خدا برام نگهت داره که واقعا عزیزی",
+          "حقیقتا به تو دلبستم حقیقتا عزیزی",
+          "اسمت اشکمو جاری میکنه",
+          "آدم واسه تو هر کاری میکنه",
+          "من هر دفعه آبروریزی میکنم",
+          "آقامه که آبروداری میکنه",
+          "آبروی دو عالم ...",
+          "غمت خوش آهنگه",
+          "خیلی دلم برات تنگه",
+          "خودت یه کاری کن",
+          "حالا که قلب من سنگه",
+          "به آسمون خیره ام",
+          "من با غم تو درگیرم",
+          "دلم توی ابراست",
+          "ذکر حسین که میگیرم",
+          "سیاهیات عوضم کرده حقیقتا عجیبه",
+          "نمیرم از در این خونه قسم به این کتیبه",
+          "اسمت مرهم دردامه حسین",
+          "دائم به همه میگم آقامه حسین",
+          "هر جایی باشم برات سینه میزنم",
+          "هر جایی مثل نفس همراهمه حسین",
+          "آبروی دو عالم ...",
+        ],
       },
       {
         "name": "نماهنگ بغل وا کن",
         "singer": "حسین خلجی",
         "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16868682688575724581181.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/4KMgVhHQKL5Je5HTEo5gmpT-lnYKOnWM3B6gfJhghhM/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4Njg2ODM4OTEzMTk2NjAxMjMyOTQuanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/4KMgVhHQKL5Je5HTEo5gmpT-lnYKOnWM3B6gfJhghhM/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4Njg2ODM4OTEzMTk2NjAxMjMyOTQuanBn.jpg",
+        "times": [
+          0, 14.2, 20.4,
+          24.2, 31, 36.8,
+          43.3, 50, 65.9,
+          70.2, 75.1, 79.7,
+          84.3, 103.1, 109.7,
+          115.2, 118.8, 124.8,
+          130.3, 138.7,
+          144.5, 160.6, 164.7,
+          169.7, 174.1, 178.6,
+        ],
+        "texts": [
+          "سرزمین بی حسین یعنی یه ویرونه",
+          "هر جا بوی حرمو میده یعنی خونه",
+          "زنده میمونه",
+          "تو رو بارون خدا اشکمو باور کن",
+          "این شبا تو بغلت حالمو بهتر کن",
+          "نگاه به نوکر کن نگاه به نوکر کن",
+          "بغل وا کن که پناه خودمی",
+          "بغل وا کن تکیه گاه خودمی",
+          "معرفت یعنی خط به خط یعنی",
+          "عظمت یعنی ابی عبدالله",
+          "بی کران یعنی ضربان یعنی",
+          "مهربان یعنی ابی عبدالله",
+          "ای حسین جانم ای حسین جانم ای حسین جان ...",
+          "اسمتو که میبرم میگم جنون آمیز",
+          "باز میگم فقط حسینه باده لبریز",
+          "شور رستاخیز",
+          "اسمتو که میبرن باز میگم آقای",
+          "ابی عبدالله بزرگترین سرمایه",
+          "انشاالله مشایه",
+          "بغل وا کن پیش دلبرم باشم",
+          "بغل وا کن اربعین حرم باشم",
+          "ای جهان آرا مهربان یارا",
+          "نعمتی ما را ابی عبدالله",
+          "نفست محیا محی الموتی",
+          "جانم ای آقا ابی عبدالله",
+          "ای حسین جانم ای حسین جانم ای حسین جان ...",
+        ]
       },
       {
         "name": "نماهنگ سحر کربلا",
         "singer": "سید رضا نریمانی",
         "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16874500265213467745966.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/1UKT1kYN6qyjUkUEEUIaAGOTu-TVJJt5Tm8cNDn8T6Q/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NzQ0OTk0NDg2OTQyMjM0MzU0MTguanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/1UKT1kYN6qyjUkUEEUIaAGOTu-TVJJt5Tm8cNDn8T6Q/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NzQ0OTk0NDg2OTQyMjM0MzU0MTguanBn.jpg",
+        "times": [
+          0,
+          10.6,
+          18.8,
+          26,
+          37.6,
+          44.6,
+          52.7,
+          82.7,
+          89.1,
+          97,
+          105.1,
+          116,
+          124.0,
+          131.1,
+        ],
+        "texts": [
+          "چه مبارک سحریه سحرای کربلا",
+          "داره یه لذت دیگه سفرای کربلا",
+          "غبطه میخورن ملائک به همه سینه زنا",
+          "جا دارن رو سر عالم نوکرای کربلا",
+          "درسته که برای تو شبیه زهیر نمیشم",
+          "اگه نباشه روضه هات عاقبت به خیر نمیشم",
+          "نعم الامیری یا حسین ...",
+          "زیر و رو میشه دلم با یه نسیم کربلا",
+          "همه میدونن تموم زندگیمه کربلا",
+          "بنویس برام دوباره برسم پایین پا",
+          "چی از این بهتر که مزد نوکریمه کربلا",
+          "فقط میخواهم تو روضه هات اشک چشام جاری بشه",
+          "محاله روضه هات برام یه روزی تکراری بشه",
+          "نعم الامیری یا حسین ...",
+        ]
       },
       {
         "name": "نماهنگ به خونه برگردیم",
         "singer": "سید رضا نریمانی",
         "soundFile": "https://mir1.kashoob.com/audio/202207/enc_16588838931580620064171.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/yeqbp1lZ7Kax_SDUWDPmABsQJBHnQxVtJHeX-ALQ0MA/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODg4MzkzMTkzMzg0MzYzODEyMzkuanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/yeqbp1lZ7Kax_SDUWDPmABsQJBHnQxVtJHeX-ALQ0MA/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODg4MzkzMTkzMzg0MzYzODEyMzkuanBn.jpg",
+        "times": [
+          0,
+          26.2,
+          41.3,
+          48.2,
+          72.5,
+          79.7,
+          94.3,
+          109.5,
+          123.9,
+          130.9,
+          146.4,
+          153.7,
+          161.3,
+        ],
+        "texts": [
+          "به خونه برگردیم خونه آغوش حسینه مگه نه",
+          "به خونه برگردیم خونه بین الحرمینه مگه نه",
+          "من ویرونه اربعین میرسم خونه",
+          "بده سامونم دیگه تو خونه میمونم",
+          "حسین حرف مادر پدر بزرگامون بود",
+          "حسین قبل از این دنیا دین و دنیامون بود",
+          "به خونه برگشتم مگه میشه پام به هیئت نرسه",
+          "به خونه برگشتم نمیشه دلم به خیمت نرسه",
+          "مگه از سنگه چه کنم باز دلم تنگه",
+          "مهربون ارباب یا حسین دلمو دریاب",
+          "حسین خونه مادریم هیئته والله",
+          "حسین همه نوکریم هیئته والله",
+          "حسین لحظه دلبریم هیئته والله",
+        ]
       },
       {
         "name": "بسم الله اگه عاشق حضرت یاری",
         "singer": "سید مجید بنی فاطمه",
         "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898104408144043366366.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/8VkcdJV2hM60xXBYDPkYBYdGX-pgVT8cqsMaVAk0uUs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTgxNzkzNTk1MDEyNzQxMTExMTUuanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/8VkcdJV2hM60xXBYDPkYBYdGX-pgVT8cqsMaVAk0uUs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTgxNzkzNTk1MDEyNzQxMTExMTUuanBn.jpg",
       },
       {
         "name": "نماهنگ دم بگیرید",
         "singer": "حنیف طاهری",
         "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898630542233373502651.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/hU1FibYmEiPPVswPCL9rU1vGsO43TmTKAyCCAQtmRz0/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2NjIxMjM3OTI4MDMyODk5MDAuanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/hU1FibYmEiPPVswPCL9rU1vGsO43TmTKAyCCAQtmRz0/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2NjIxMjM3OTI4MDMyODk5MDAuanBn.jpg",
       },
       {
         "name": "نماهنگ عجلوا بالحسین",
         "singer": "سید رضا نریمانی",
         "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898618223007067036508.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/oOhSf0KJbee9i-CvMt-sUmVXiTyHmS-yuEa6XRgF_i4/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2Njc0MTMxOTc3OTg1NTg4NjkuanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/oOhSf0KJbee9i-CvMt-sUmVXiTyHmS-yuEa6XRgF_i4/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2Njc0MTMxOTc3OTg1NTg4NjkuanBn.jpg",
       },
       {
         "name": "نماهنگ بی تو",
         "singer": "حاج محمود کریمی",
         "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16899038432533550038761.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/3-AfZfvGkVNDYWumHplV2XjLLB-IP1jb6dTTG_AlJUw/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTkwNDMwNzgyMjMwMjQ5NTUzNjQuanBn.jpg"
+        "imageFile": "https://cdnimg.kashoob.com/3-AfZfvGkVNDYWumHplV2XjLLB-IP1jb6dTTG_AlJUw/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTkwNDMwNzgyMjMwMjQ5NTUzNjQuanBn.jpg",
       }
     ]
     this.svgs = {
@@ -94,6 +235,31 @@ class Player {
     this.dlBtn.setAttribute('href', this.musics[id].soundFile)
     this.nowPlaying.innerText = `در حال پخش ${this.musicIndex + 1} از ${this.musics.length}`
   }
+  setListeners = () => {
+    this.audio.addEventListener('ended', this.onMusicEnd)
+    this.btnPlay.addEventListener('click', this.plause)
+    this.btnNext.addEventListener('click', this.nextMusic)
+    this.btnPervious.addEventListener('click', this.perviousMusic)
+    this.volumeSlider.addEventListener('input', this.setVolume)
+    this.timeSlider.addEventListener('input', this.setTime)
+    this.repeatBtn.addEventListener('click', this.onRepeatBtnClick)
+    this.soundBtn.addEventListener('click', this.onSoundBtnClick)
+    setInterval(this.setText, 50)
+    setInterval(() => {
+      if (!this.audio.paused) this.setTimeUI(this.calcCurrentPercentage())
+    }, 1000)
+    this.audio.addEventListener('loadeddata', () => {
+      this.timeAll.innerText = this.secondsToTime(this.audio.duration)
+    })
+  }
+  resetState = () => {
+    this.setTime(0)
+    this.followingText.innerText = 'متن صوت...'
+    this.btnPlay.innerHTML = this.svgs.play
+    if (!this.audio.paused) this.audio.pause()
+    this.isPlaying = false
+  }
+
   plause = () => {
     if (this.isPlaying)  {
       this.audio.pause()
@@ -117,37 +283,17 @@ class Player {
     this.loadMusic(this.musicIndex)
     this.plause()
   }
-  resetState = () => {
-    this.setTime(0)
-    this.btnPlay.innerHTML = this.svgs.play
-    if (!this.audio.paused) this.audio.pause()
-    this.isPlaying = false
-  }
-  setListeners = () => {
-    this.audio.addEventListener('ended', this.onMusicEnd)
-    this.btnPlay.addEventListener('click', this.plause)
-    this.btnNext.addEventListener('click', this.nextMusic)
-    this.btnPervious.addEventListener('click', this.perviousMusic)
-    this.volumeSlider.addEventListener('input', this.setVolume)
-    this.timeSlider.addEventListener('input', this.setTime)
-    this.repeatBtn.addEventListener('click', this.onRepeatBtnClick)
-    this.soundBtn.addEventListener('click', this.onSoundBtnClick)
-    setInterval(() => {
-      if (!this.audio.paused) this.setTimeUI(this.calcCurrentPercentage())
-    }, 1000)
-    this.audio.addEventListener('loadeddata', () => {
-      this.timeAll.innerText = this.secondsToTime(this.audio.duration)
+
+  setText = () => {
+    let currentMusic = this.musics[this.musicIndex]
+    currentMusic.times.map((time, index) => {
+      if (time == this.round(this.audio.currentTime)) {
+        this.followingText.innerText = currentMusic.texts[index]
+      }
     })
   }
   setSliderStyle = (value, elem) => {
     elem.style.background = `linear-gradient(to right, hsl(200, 100%, 50%) ${value}%, hsla(0, 0%, 0%, 0.5) 0%)`
-  }
-  secondsToTime = seconds => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = Math.floor(seconds % 60)
-    const minutesWithZero = minutes > 9 ? minutes : `0${minutes}`
-    const remainingSecondsWithZero = remainingSeconds > 9 ? remainingSeconds : `0${remainingSeconds}`
-    return `${minutesWithZero}:${remainingSecondsWithZero}`
   }
   decideNextAudio = () => {
     if (this.repeatBtnMode == "repeat-all") {
@@ -162,6 +308,7 @@ class Player {
       if (randomIndex !== this.musicIndex) this.nextMusicToPlay = randomIndex
     }
   }
+
   onRepeatBtnClick = () => {
     if (this.repeatBtnMode == "repeat-all") {
       this.repeatBtn.innerHTML = this.svgs.repeatOnce
@@ -189,6 +336,7 @@ class Player {
     if (!this.volumeSliderIsVisible) this.volumeSlider.style.visibility = 'hidden'
     this.volumeSliderIsVisible = !this.volumeSliderIsVisible
   }
+
   setVolume = () => {
     this.setVolumeUI(this.volumeSlider.value)
     this.setCurrentVolume(this.volumeSlider.value)
@@ -199,6 +347,7 @@ class Player {
   setVolumeUI = (percentage) => {
     this.setSliderStyle(percentage, this.volumeSlider)
   }
+
   setTime = () => {
     this.setTimeUI(this.timeSlider.value)
     this.setCurrentTime(this.timeSlider.value)
@@ -211,8 +360,17 @@ class Player {
     this.timeSlider.value = percentage
     this.setSliderStyle(percentage, this.timeSlider)
   }
+
+  secondsToTime = seconds => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = Math.floor(seconds % 60)
+    const minutesWithZero = minutes > 9 ? minutes : `0${minutes}`
+    const remainingSecondsWithZero = remainingSeconds > 9 ? remainingSeconds : `0${remainingSeconds}`
+    return `${minutesWithZero}:${remainingSecondsWithZero}`
+  }
   calcCurrentPercentage = () => Math.round((this.audio.currentTime / this.audio.duration) * 100)
   generateRandomIndex = () => Math.floor(Math.random() * (((this.musics.length - 1) - 0 + 1) + 0))
+  round = n => parseFloat(n.toFixed(1))
 }
 
 const player = new Player(document.querySelector('.player'))
