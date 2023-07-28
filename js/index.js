@@ -21,274 +21,9 @@ class Player {
     this.audio = document.createElement('audio')
     this.volumeSliderIsVisible = false
     this.isPlaying = false
-    this.musicIndex = 0
+    this.currentMusicID = 0
     this.nextMusicToPlay = 1
-    this.musics = [
-      {
-        "name": "نماهنگ مرهم",
-        "singer": "پیام کیانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16862418013250862413684.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/eLVd0ivEmLniULUT53A49lHDdMp7hwXEHNaH37Lwpmo/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NjI0MTcxMDQxMjA2ODkwMzM4NTAuanBn.jpg",
-        "times": [
-          0.0, 11.3, 19.8, 
-          27.8, 35.4, 42.7,
-          54.0, 57.4, 61.2,
-          64.7, 68.4, 97.7,
-          100.8, 104.7, 109.1, 
-          112.9, 116.5, 121.1,
-          124.9, 128.4, 135.9, 
-          148.1, 151.5, 155.2,
-          158.8, 163.7,
-        ],
-        "texts": [
-          "دوای هر دردی دنیامو زیر و رو کردی",
-          "گرفتی دستامو آقا تو واقعا مردی",
-          "تو واقعا خوبی تو قلب من تو محبوبی",
-          "دل سیاهم شد با عشق تو طلاکوبی",
-          "خدا برام نگهت داره که واقعا عزیزی",
-          "حقیقتا به تو دلبستم حقیقتا عزیزی",
-          "اسمت اشکمو جاری میکنه",
-          "آدم واسه تو هر کاری میکنه",
-          "من هر دفعه آبروریزی میکنم",
-          "آقامه که آبروداری میکنه",
-          "آبروی دو عالم ...",
-          "غمت خوش آهنگه",
-          "خیلی دلم برات تنگه",
-          "خودت یه کاری کن",
-          "حالا که قلب من سنگه",
-          "به آسمون خیره ام",
-          "من با غم تو درگیرم",
-          "دلم توی ابراست",
-          "ذکر حسین که میگیرم",
-          "سیاهیات عوضم کرده حقیقتا عجیبه",
-          "نمیرم از در این خونه قسم به این کتیبه",
-          "اسمت مرهم دردامه حسین",
-          "دائم به همه میگم آقامه حسین",
-          "هر جایی باشم برات سینه میزنم",
-          "هر جایی مثل نفس همراهمه حسین",
-          "آبروی دو عالم ...",
-        ],
-      },
-      {
-        "name": "نماهنگ بغل وا کن",
-        "singer": "حسین خلجی",
-        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16868682688575724581181.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/4KMgVhHQKL5Je5HTEo5gmpT-lnYKOnWM3B6gfJhghhM/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4Njg2ODM4OTEzMTk2NjAxMjMyOTQuanBn.jpg",
-        "times": [
-          0, 14.2, 20.4,
-          24.2, 31, 36.8,
-          43.3, 50, 65.9,
-          70.2, 75.1, 79.7,
-          84.3, 103.1, 109.7,
-          115.2, 118.8, 124.8,
-          130.3, 138.7,
-          144.5, 160.6, 164.7,
-          169.7, 174.1, 178.6,
-        ],
-        "texts": [
-          "سرزمین بی حسین یعنی یه ویرونه",
-          "هر جا بوی حرمو میده یعنی خونه",
-          "زنده میمونه",
-          "تو رو بارون خدا اشکمو باور کن",
-          "این شبا تو بغلت حالمو بهتر کن",
-          "نگاه به نوکر کن نگاه به نوکر کن",
-          "بغل وا کن که پناه خودمی",
-          "بغل وا کن تکیه گاه خودمی",
-          "معرفت یعنی خط به خط یعنی",
-          "عظمت یعنی ابی عبدالله",
-          "بی کران یعنی ضربان یعنی",
-          "مهربان یعنی ابی عبدالله",
-          "ای حسین جانم ای حسین جانم ای حسین جان ...",
-          "اسمتو که میبرم میگم جنون آمیز",
-          "باز میگم فقط حسینه باده لبریز",
-          "شور رستاخیز",
-          "اسمتو که میبرن باز میگم آقای",
-          "ابی عبدالله بزرگترین سرمایه",
-          "انشاالله مشایه",
-          "بغل وا کن پیش دلبرم باشم",
-          "بغل وا کن اربعین حرم باشم",
-          "ای جهان آرا مهربان یارا",
-          "نعمتی ما را ابی عبدالله",
-          "نفست محیا محی الموتی",
-          "جانم ای آقا ابی عبدالله",
-          "ای حسین جانم ای حسین جانم ای حسین جان ...",
-        ]
-      },
-      {
-        "name": "نماهنگ سحر کربلا",
-        "singer": "سید رضا نریمانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16874500265213467745966.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/1UKT1kYN6qyjUkUEEUIaAGOTu-TVJJt5Tm8cNDn8T6Q/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NzQ0OTk0NDg2OTQyMjM0MzU0MTguanBn.jpg",
-        "times": [
-          0,
-          10.6,
-          18.8,
-          26,
-          37.6,
-          44.6,
-          52.7,
-          82.7,
-          89.1,
-          97,
-          105.1,
-          116,
-          124.0,
-          131.1,
-        ],
-        "texts": [
-          "چه مبارک سحریه سحرای کربلا",
-          "داره یه لذت دیگه سفرای کربلا",
-          "غبطه میخورن ملائک به همه سینه زنا",
-          "جا دارن رو سر عالم نوکرای کربلا",
-          "درسته که برای تو شبیه زهیر نمیشم",
-          "اگه نباشه روضه هات عاقبت به خیر نمیشم",
-          "نعم الامیری یا حسین ...",
-          "زیر و رو میشه دلم با یه نسیم کربلا",
-          "همه میدونن تموم زندگیمه کربلا",
-          "بنویس برام دوباره برسم پایین پا",
-          "چی از این بهتر که مزد نوکریمه کربلا",
-          "فقط میخواهم تو روضه هات اشک چشام جاری بشه",
-          "محاله روضه هات برام یه روزی تکراری بشه",
-          "نعم الامیری یا حسین ...",
-        ]
-      },
-      {
-        "name": "نماهنگ به خونه برگردیم",
-        "singer": "سید رضا نریمانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202207/enc_16588838931580620064171.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/yeqbp1lZ7Kax_SDUWDPmABsQJBHnQxVtJHeX-ALQ0MA/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODg4MzkzMTkzMzg0MzYzODEyMzkuanBn.jpg",
-        "times": [
-          0,
-          26.2,
-          41.3,
-          48.2,
-          72.5,
-          79.7,
-          94.3,
-          109.5,
-          123.9,
-          130.9,
-          146.4,
-          153.7,
-          161.3,
-        ],
-        "texts": [
-          "به خونه برگردیم خونه آغوش حسینه مگه نه",
-          "به خونه برگردیم خونه بین الحرمینه مگه نه",
-          "من ویرونه اربعین میرسم خونه",
-          "بده سامونم دیگه تو خونه میمونم",
-          "حسین حرف مادر پدر بزرگامون بود",
-          "حسین قبل از این دنیا دین و دنیامون بود",
-          "به خونه برگشتم مگه میشه پام به هیئت نرسه",
-          "به خونه برگشتم نمیشه دلم به خیمت نرسه",
-          "مگه از سنگه چه کنم باز دلم تنگه",
-          "مهربون ارباب یا حسین دلمو دریاب",
-          "حسین خونه مادریم هیئته والله",
-          "حسین همه نوکریم هیئته والله",
-          "حسین لحظه دلبریم هیئته والله",
-        ]
-      },
-      {
-        "name": "نماهنگ دم بگیرید",
-        "singer": "حنیف طاهری",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898630542233373502651.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/hU1FibYmEiPPVswPCL9rU1vGsO43TmTKAyCCAQtmRz0/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2NjIxMjM3OTI4MDMyODk5MDAuanBn.jpg",
-        "times": [
-          0,
-          21,
-          36.3,
-          41.1,
-          45.5,
-          49.7,
-          54.1,
-          63.7,
-          72.6,
-          80.9,
-          88.9,
-          97.8,
-          104.2,
-          113.1,
-        ],
-        "texts": [
-          "حال و هوای کوچه غم و دود و در هم است",
-          "پرچم به اهتزاز درآمد محرم است",
-          "دم بگیرید با طبل عزا",
-          "نور بگیرید از نور حسین",
-          "پر بگیرید تا کرب و بلا",
-          "شور بگیرید از شور حسین",
-          "باز این چه شورش است در خلق عالم است",
-          "سر های قدسیان بر زانوی غم است",
-          "باز این چه شورش است در خلق عالم است",
-          "سر های قدسیان بر زانوی غم است",
-          "ای اهل عالم برپا شد ماتم",
-          "همه دنیا جا میشه زیر پرچم",
-          "اباعبدالله الحمدلله",
-          "زنده بودیم و دیدیم اومد محرم",
-        ]
-      },
-      {
-        "name": "نماهنگ عجلوا بالحسین",
-        "singer": "سید رضا نریمانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898618223007067036508.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/oOhSf0KJbee9i-CvMt-sUmVXiTyHmS-yuEa6XRgF_i4/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2Njc0MTMxOTc3OTg1NTg4NjkuanBn.jpg",
-        "times": [
-          0,
-          7.6,
-          11.4,
-          15.6,
-          19.8,
-          27.8,
-          36.1,
-          40,
-          44.5,
-          48.4,
-          56.5,
-          72.9,
-          103.5,
-          115.4,
-          119.2,
-          123.1,
-          127.4,
-          131,
-          139.7,
-          147.9,
-          151.7,
-          155.5,
-          160.1,
-          164.2,
-          181.6,
-          209.8,
-        ],
-        "texts": [
-          "عجلوا بالحسین",
-          "عجلوا بالبکاء",
-          "عجلوا بالحرم",
-          "عجلوا بالکربلا",
-          "وقت نماز عشقه جا نمونین عاشقا",
-          "با نغمه یا حسین شهرو کنید کربلا",
-          "برای برپایی روضه ها",
-          "خود بی بی زهراست که بانیه",
-          "تو این شبا حتی ملائکه",
-          "میان میشینن تو حسینیه",
-          "بسم الله با زهرا عزا به پا کنید برا ثارالله",
-          "بسم الله بسم الله خدام الحسین ماشاالله",
-          "لاحول ولا قوه الا بالله ...",
-          "عجلوا بالحسین",
-          "عجلوا بالبکاء",
-          "عجلوا بالحرم",
-          "عجلوا بالکربلا",
-          "گلدسته های حرم دارن میگن یکصدا",
-          "بازه درای حرم رو به همه این شبا",
-          "سوا نکرده میخره حسین",
-          "تموم ما رو با یه نیم نگاه",
-          "با اشک چشم و با یه السلام",
-          "میره دلامون سمت کربلا",
-          "بسم الله با زهرا بریم زیارت اباعبدالله",
-          "بسم الله بسم الله خدام الحسین ماشاالله",
-          "لاحول ولا قوه الا بالله ...",
-        ],
-      },
-    ]
+    this.musics = []
     this.svgs = {
       pause: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M208,48V208a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8h40A8,8,0,0,1,208,48ZM96,40H56a8,8,0,0,0-8,8V208a8,8,0,0,0,8,8H96a8,8,0,0,0,8-8V48A8,8,0,0,0,96,40Z" opacity="0.2"></path><path d="M200,32H160a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16h40a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm0,176H160V48h40ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Zm0,176H56V48H96Z"></path></svg>',
       play: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M228.23,134.69,84.15,222.81A8,8,0,0,1,72,216.12V39.88a8,8,0,0,1,12.15-6.69l144.08,88.12A7.82,7.82,0,0,1,228.23,134.69Z" opacity="0.2"></path><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path></svg>',
@@ -298,8 +33,17 @@ class Player {
     }
   }
   init = () => {
-    this.loadMusic(this.musicIndex)
-    this.setListeners()
+    this.getMusics().then(() => {
+
+      this.loadMusic(this.currentMusicID)
+      this.setListeners()
+      
+    }).catch(err => console.error(err))
+  }
+  async getMusics() {
+    const response = await fetch('./assets/data.json')
+    const data = await response.json()
+    this.musics = data
   }
   loadMusic = (id) => {
     this.musicName.textContent = this.musics[id].name
@@ -309,7 +53,7 @@ class Player {
     this.audio.load()
 
     this.dlBtn.setAttribute('href', this.musics[id].soundFile)
-    this.nowPlaying.innerText = `در حال پخش ${this.musicIndex + 1} از ${this.musics.length}`
+    this.nowPlaying.innerText = `در حال پخش ${this.currentMusicID + 1} از ${this.musics.length}`
   }
   setListeners = () => {
     this.audio.addEventListener('ended', this.onMusicEnd)
@@ -349,19 +93,19 @@ class Player {
   }
   nextMusic = () => {
     this.resetState()
-    this.musicIndex = (this.musicIndex >= this.musics.length - 1) ? (0) : (this.musicIndex + 1);
-    this.loadMusic(this.musicIndex)
+    this.currentMusicID = (this.currentMusicID >= this.musics.length - 1) ? (0) : (this.currentMusicID + 1);
+    this.loadMusic(this.currentMusicID)
     this.plause()
   }
   perviousMusic = () => {
     this.resetState()
-    this.musicIndex = (this.musicIndex <= 0) ? (this.musics.length - 1) : (this.musicIndex - 1);
-    this.loadMusic(this.musicIndex)
+    this.currentMusicID = (this.currentMusicID <= 0) ? (this.musics.length - 1) : (this.currentMusicID - 1);
+    this.loadMusic(this.currentMusicID)
     this.plause()
   }
 
   setText = () => {
-    let currentMusic = this.musics[this.musicIndex]
+    let currentMusic = this.musics[this.currentMusicID]
     currentMusic.times.map((time, index) => {
       if (time == this.round(this.audio.currentTime)) {
         this.followingText.innerText = currentMusic.texts[index]
@@ -373,15 +117,15 @@ class Player {
   }
   decideNextAudio = () => {
     if (this.repeatBtnMode == "repeat-all") {
-      this.nextMusicToPlay = ((this.musicIndex + 1) > this.musics.length - 1) ? 0 : (this.musicIndex + 1);
+      this.nextMusicToPlay = ((this.currentMusicID + 1) > this.musics.length - 1) ? 0 : (this.currentMusicID + 1);
     }
     if (this.repeatBtnMode == "repeat-once") {
-      this.nextMusicToPlay = this.musicIndex
+      this.nextMusicToPlay = this.currentMusicID
     }
     if (this.repeatBtnMode == "shuffle") {
       let randomIndex = this.generateRandomIndex()
-      while (randomIndex === this.musicIndex) randomIndex = this.generateRandomIndex()
-      if (randomIndex !== this.musicIndex) this.nextMusicToPlay = randomIndex
+      while (randomIndex === this.currentMusicID) randomIndex = this.generateRandomIndex()
+      if (randomIndex !== this.currentMusicID) this.nextMusicToPlay = randomIndex
     }
   }
 
@@ -403,7 +147,7 @@ class Player {
   onMusicEnd = () => {
     this.resetState()
     this.decideNextAudio()
-    this.musicIndex = this.nextMusicToPlay
+    this.currentMusicID = this.nextMusicToPlay
     this.loadMusic(this.nextMusicToPlay)
     this.plause()
   }
