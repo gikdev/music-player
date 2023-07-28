@@ -14,64 +14,16 @@ class Player {
     this.repeatBtn = player.querySelector('#repeat-btn')
     this.soundBtn = player.querySelector('#sound-btn')
     this.nowPlaying = player.querySelector('#now-playing')
+    this.followingText = player.querySelector('.following-text')
 
     this.repeatBtnMode = "repeat-all"
     // All modes: "repeat-all", "repeat-once", "shuffle"
     this.audio = document.createElement('audio')
     this.volumeSliderIsVisible = false
     this.isPlaying = false
-    this.musicIndex = 0
+    this.currentMusicID = 0
     this.nextMusicToPlay = 1
-    this.musics = [
-      {
-        "name": "نماهنگ مرهم",
-        "singer": "پیام کیانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16862418013250862413684.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/eLVd0ivEmLniULUT53A49lHDdMp7hwXEHNaH37Lwpmo/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NjI0MTcxMDQxMjA2ODkwMzM4NTAuanBn.jpg"
-      },
-      {
-        "name": "نماهنگ بغل وا کن",
-        "singer": "حسین خلجی",
-        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16868682688575724581181.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/4KMgVhHQKL5Je5HTEo5gmpT-lnYKOnWM3B6gfJhghhM/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4Njg2ODM4OTEzMTk2NjAxMjMyOTQuanBn.jpg"
-      },
-      {
-        "name": "نماهنگ سحر کربلا",
-        "singer": "سید رضا نریمانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202306/enc_16874500265213467745966.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/1UKT1kYN6qyjUkUEEUIaAGOTu-TVJJt5Tm8cNDn8T6Q/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDYvMTY4NzQ0OTk0NDg2OTQyMjM0MzU0MTguanBn.jpg"
-      },
-      {
-        "name": "نماهنگ به خونه برگردیم",
-        "singer": "سید رضا نریمانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202207/enc_16588838931580620064171.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/yeqbp1lZ7Kax_SDUWDPmABsQJBHnQxVtJHeX-ALQ0MA/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIyMDcvMTY1ODg4MzkzMTkzMzg0MzYzODEyMzkuanBn.jpg"
-      },
-      {
-        "name": "بسم الله اگه عاشق حضرت یاری",
-        "singer": "سید مجید بنی فاطمه",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898104408144043366366.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/8VkcdJV2hM60xXBYDPkYBYdGX-pgVT8cqsMaVAk0uUs/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTgxNzkzNTk1MDEyNzQxMTExMTUuanBn.jpg"
-      },
-      {
-        "name": "نماهنگ دم بگیرید",
-        "singer": "حنیف طاهری",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898630542233373502651.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/hU1FibYmEiPPVswPCL9rU1vGsO43TmTKAyCCAQtmRz0/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2NjIxMjM3OTI4MDMyODk5MDAuanBn.jpg"
-      },
-      {
-        "name": "نماهنگ عجلوا بالحسین",
-        "singer": "سید رضا نریمانی",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16898618223007067036508.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/oOhSf0KJbee9i-CvMt-sUmVXiTyHmS-yuEa6XRgF_i4/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTg2Njc0MTMxOTc3OTg1NTg4NjkuanBn.jpg"
-      },
-      {
-        "name": "نماهنگ بی تو",
-        "singer": "حاج محمود کریمی",
-        "soundFile": "https://mir1.kashoob.com/audio/202307/enc_16899038432533550038761.mp3",
-        "imageFile": "https://cdnimg.kashoob.com/3-AfZfvGkVNDYWumHplV2XjLLB-IP1jb6dTTG_AlJUw/wm:0.8:sowe:15:15:0.18/bG9jYWw6Ly8vc3RvcmFnZS9pbWFnZS8yMDIzMDcvMTY4OTkwNDMwNzgyMjMwMjQ5NTUzNjQuanBn.jpg"
-      }
-    ]
+    this.musics = []
     this.svgs = {
       pause: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M208,48V208a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8h40A8,8,0,0,1,208,48ZM96,40H56a8,8,0,0,0-8,8V208a8,8,0,0,0,8,8H96a8,8,0,0,0,8-8V48A8,8,0,0,0,96,40Z" opacity="0.2"></path><path d="M200,32H160a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16h40a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm0,176H160V48h40ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Zm0,176H56V48H96Z"></path></svg>',
       play: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M228.23,134.69,84.15,222.81A8,8,0,0,1,72,216.12V39.88a8,8,0,0,1,12.15-6.69l144.08,88.12A7.82,7.82,0,0,1,228.23,134.69Z" opacity="0.2"></path><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path></svg>',
@@ -81,8 +33,17 @@ class Player {
     }
   }
   init = () => {
-    this.loadMusic(this.musicIndex)
-    this.setListeners()
+    this.getMusics().then(() => {
+
+      this.loadMusic(this.currentMusicID)
+      this.setListeners()
+      
+    }).catch(err => console.error(err))
+  }
+  async getMusics() {
+    const response = await fetch('./assets/data.json')
+    const data = await response.json()
+    this.musics = data
   }
   loadMusic = (id) => {
     this.musicName.textContent = this.musics[id].name
@@ -92,8 +53,33 @@ class Player {
     this.audio.load()
 
     this.dlBtn.setAttribute('href', this.musics[id].soundFile)
-    this.nowPlaying.innerText = `در حال پخش ${this.musicIndex + 1} از ${this.musics.length}`
+    this.nowPlaying.innerText = `در حال پخش ${this.currentMusicID + 1} از ${this.musics.length}`
   }
+  setListeners = () => {
+    this.audio.addEventListener('ended', this.onMusicEnd)
+    this.btnPlay.addEventListener('click', this.plause)
+    this.btnNext.addEventListener('click', this.nextMusic)
+    this.btnPervious.addEventListener('click', this.perviousMusic)
+    this.volumeSlider.addEventListener('input', this.setVolume)
+    this.timeSlider.addEventListener('input', this.setTime)
+    this.repeatBtn.addEventListener('click', this.onRepeatBtnClick)
+    this.soundBtn.addEventListener('click', this.onSoundBtnClick)
+    setInterval(this.setText, 50)
+    setInterval(() => {
+      if (!this.audio.paused) this.setTimeUI(this.calcCurrentPercentage())
+    }, 1000)
+    this.audio.addEventListener('loadeddata', () => {
+      this.timeAll.innerText = this.secondsToTime(this.audio.duration)
+    })
+  }
+  resetState = () => {
+    this.setTime(0)
+    this.followingText.innerText = 'متن صوت...'
+    this.btnPlay.innerHTML = this.svgs.play
+    if (!this.audio.paused) this.audio.pause()
+    this.isPlaying = false
+  }
+
   plause = () => {
     if (this.isPlaying)  {
       this.audio.pause()
@@ -107,61 +93,42 @@ class Player {
   }
   nextMusic = () => {
     this.resetState()
-    this.musicIndex = (this.musicIndex >= this.musics.length - 1) ? (0) : (this.musicIndex + 1);
-    this.loadMusic(this.musicIndex)
+    this.currentMusicID = (this.currentMusicID >= this.musics.length - 1) ? (0) : (this.currentMusicID + 1);
+    this.loadMusic(this.currentMusicID)
     this.plause()
   }
   perviousMusic = () => {
     this.resetState()
-    this.musicIndex = (this.musicIndex <= 0) ? (this.musics.length - 1) : (this.musicIndex - 1);
-    this.loadMusic(this.musicIndex)
+    this.currentMusicID = (this.currentMusicID <= 0) ? (this.musics.length - 1) : (this.currentMusicID - 1);
+    this.loadMusic(this.currentMusicID)
     this.plause()
   }
-  resetState = () => {
-    this.setTime(0)
-    this.btnPlay.innerHTML = this.svgs.play
-    if (!this.audio.paused) this.audio.pause()
-    this.isPlaying = false
-  }
-  setListeners = () => {
-    this.audio.addEventListener('ended', this.onMusicEnd)
-    this.btnPlay.addEventListener('click', this.plause)
-    this.btnNext.addEventListener('click', this.nextMusic)
-    this.btnPervious.addEventListener('click', this.perviousMusic)
-    this.volumeSlider.addEventListener('input', this.setVolume)
-    this.timeSlider.addEventListener('input', this.setTime)
-    this.repeatBtn.addEventListener('click', this.onRepeatBtnClick)
-    this.soundBtn.addEventListener('click', this.onSoundBtnClick)
-    setInterval(() => {
-      if (!this.audio.paused) this.setTimeUI(this.calcCurrentPercentage())
-    }, 1000)
-    this.audio.addEventListener('loadeddata', () => {
-      this.timeAll.innerText = this.secondsToTime(this.audio.duration)
+
+  setText = () => {
+    let currentMusic = this.musics[this.currentMusicID]
+    currentMusic.times.map((time, index) => {
+      if (time == this.round(this.audio.currentTime)) {
+        this.followingText.innerText = currentMusic.texts[index]
+      }
     })
   }
   setSliderStyle = (value, elem) => {
     elem.style.background = `linear-gradient(to right, hsl(200, 100%, 50%) ${value}%, hsla(0, 0%, 0%, 0.5) 0%)`
   }
-  secondsToTime = seconds => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = Math.floor(seconds % 60)
-    const minutesWithZero = minutes > 9 ? minutes : `0${minutes}`
-    const remainingSecondsWithZero = remainingSeconds > 9 ? remainingSeconds : `0${remainingSeconds}`
-    return `${minutesWithZero}:${remainingSecondsWithZero}`
-  }
   decideNextAudio = () => {
     if (this.repeatBtnMode == "repeat-all") {
-      this.nextMusicToPlay = ((this.musicIndex + 1) > this.musics.length - 1) ? 0 : (this.musicIndex + 1);
+      this.nextMusicToPlay = ((this.currentMusicID + 1) > this.musics.length - 1) ? 0 : (this.currentMusicID + 1);
     }
     if (this.repeatBtnMode == "repeat-once") {
-      this.nextMusicToPlay = this.musicIndex
+      this.nextMusicToPlay = this.currentMusicID
     }
     if (this.repeatBtnMode == "shuffle") {
       let randomIndex = this.generateRandomIndex()
-      while (randomIndex === this.musicIndex) randomIndex = this.generateRandomIndex()
-      if (randomIndex !== this.musicIndex) this.nextMusicToPlay = randomIndex
+      while (randomIndex === this.currentMusicID) randomIndex = this.generateRandomIndex()
+      if (randomIndex !== this.currentMusicID) this.nextMusicToPlay = randomIndex
     }
   }
+
   onRepeatBtnClick = () => {
     if (this.repeatBtnMode == "repeat-all") {
       this.repeatBtn.innerHTML = this.svgs.repeatOnce
@@ -180,7 +147,7 @@ class Player {
   onMusicEnd = () => {
     this.resetState()
     this.decideNextAudio()
-    this.musicIndex = this.nextMusicToPlay
+    this.currentMusicID = this.nextMusicToPlay
     this.loadMusic(this.nextMusicToPlay)
     this.plause()
   }
@@ -189,6 +156,7 @@ class Player {
     if (!this.volumeSliderIsVisible) this.volumeSlider.style.visibility = 'hidden'
     this.volumeSliderIsVisible = !this.volumeSliderIsVisible
   }
+
   setVolume = () => {
     this.setVolumeUI(this.volumeSlider.value)
     this.setCurrentVolume(this.volumeSlider.value)
@@ -199,6 +167,7 @@ class Player {
   setVolumeUI = (percentage) => {
     this.setSliderStyle(percentage, this.volumeSlider)
   }
+
   setTime = () => {
     this.setTimeUI(this.timeSlider.value)
     this.setCurrentTime(this.timeSlider.value)
@@ -211,8 +180,17 @@ class Player {
     this.timeSlider.value = percentage
     this.setSliderStyle(percentage, this.timeSlider)
   }
+
+  secondsToTime = seconds => {
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = Math.floor(seconds % 60)
+    const minutesWithZero = minutes > 9 ? minutes : `0${minutes}`
+    const remainingSecondsWithZero = remainingSeconds > 9 ? remainingSeconds : `0${remainingSeconds}`
+    return `${minutesWithZero}:${remainingSecondsWithZero}`
+  }
   calcCurrentPercentage = () => Math.round((this.audio.currentTime / this.audio.duration) * 100)
   generateRandomIndex = () => Math.floor(Math.random() * (((this.musics.length - 1) - 0 + 1) + 0))
+  round = n => parseFloat(n.toFixed(1))
 }
 
 const player = new Player(document.querySelector('.player'))

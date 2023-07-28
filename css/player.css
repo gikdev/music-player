@@ -48,6 +48,12 @@
   margin: 0;
 }
 
+.following-text {
+  text-align: center;
+  direction: rtl;
+  font-size: 2.2rem;
+}
+
 .player__container--control-part {
   gap: 2rem;
 }
