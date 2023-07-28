@@ -106,11 +106,14 @@ class Player {
 
   setText = () => {
     let currentMusic = this.musics[this.currentMusicID]
-    currentMusic.times.map((time, index) => {
-      if (time == this.round(this.audio.currentTime)) {
-        this.followingText.innerText = currentMusic.texts[index]
+    for (let i = currentMusic.times.length - 1; i >= 0; i--) {
+      let time = currentMusic.times[i]
+      let currentTime = this.round(this.audio.currentTime)
+      if (currentTime >= time) {
+        this.followingText.innerText = currentMusic.texts[i]
+        break
       }
-    })
+    }
   }
   setSliderStyle = (value, elem) => {
     elem.style.background = `linear-gradient(to right, hsl(200, 100%, 50%) ${value}%, hsla(0, 0%, 0%, 0.5) 0%)`
